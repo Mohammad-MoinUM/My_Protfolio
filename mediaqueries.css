@@ -1,0 +1,84 @@
+/* ---------- Large tablets / small laptops (≤1400px) ---------- */
+@media screen and (max-width: 1400px) {
+  /* Hero height a bit smaller so content doesn’t overflow */
+  #profile { height: 83vh; gap: 4rem; }
+
+  /* About cards can wrap neatly */
+  .about-containers { flex-wrap: wrap; gap: 2rem; }
+
+  /* Let these sections auto-size when content wraps */
+  #projects,
+  #contact { height: fit-content; }
+
+  /* Slightly reduce extreme margins from base */
+  section { margin: 0 8rem; }
+}
+
+/* ---------- Tablets (≤1200px) ---------- */
+@media screen and (max-width: 1200px) {
+  /* Nav: hide desktop, show hamburger */
+  #desktop-nav { display: none; }
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    height: 14vh;           /* a bit shorter than desktop */
+  }
+
+  /* Two-column sections become single-column */
+  #profile { display: block; height: auto; margin-bottom: 0; }
+  .section-container { display: block; height: auto; }
+
+  /* Remove fixed section heights so content flows */
+  section,
+  .section-container { height: fit-content; }
+  section { margin: 0 5%; }
+
+  /* Center the profile/about images and size them for tablets */
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  /* Floating arrow isn’t useful on small screens */
+  .icon.arrow { display: none; }
+
+  /* Experience container spacing */
+  #experience,
+  .experience-details-container { margin-top: 2rem; }
+
+  /* Project images fill their cards */
+  .project-img { width: 100%; height: auto; }
+}
+
+/* ---------- Landscape phones / small tablets (≤992px) ---------- */
+@media screen and (max-width: 992px) {
+  .title { font-size: 2.25rem; }
+  .section__text__p2 { font-size: 1.35rem; }
+
+  /* Articles (skill items) scale down a bit */
+  article { font-size: 1rem; }
+
+  /* Keep cards comfortable on narrower widths */
+  .details-container { padding: 1.25rem; }
+}
+
+/* ---------- Mobiles (≤768px) ---------- */
+@media screen and (max-width: 768px) {
+  /* Global layout */
+  section {
+    height: auto;
+    margin: 0 1.5rem;
+    padding-top: 2rem;
+  }
+
+  /* Profile becomes a stacked hero */
+  #profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+  }
+  #profile .section__pic-container { margin: 0 auto; }
