@@ -1,80 +1,64 @@
-/* ---------- Large tablets / small laptops (≤1400px) ---------- */
+/* Responsive styles
+   Breakpoints:
+   - 1400px: adjust spacing
+   - 1200px: switch to hamburger nav, stack sections
+   - 992px : smaller typography/cards
+   - 768px : mobile layout
+   - 480px : very small screens
+*/
+
+/* ≤1400px */
 @media screen and (max-width: 1400px) {
-  /* Hero height a bit smaller so content doesn’t overflow */
   #profile { height: 83vh; gap: 4rem; }
-
-  /* About cards can wrap neatly */
   .about-containers { flex-wrap: wrap; gap: 2rem; }
-
-  /* Let these sections auto-size when content wraps */
-  #projects,
-  #contact { height: fit-content; }
-
-  /* Slightly reduce extreme margins from base */
+  #projects, #contact { height: fit-content; }
   section { margin: 0 8rem; }
 }
 
-/* ---------- Tablets (≤1200px) ---------- */
+/* ≤1200px */
 @media screen and (max-width: 1200px) {
-  /* Nav: hide desktop, show hamburger */
   #desktop-nav { display: none; }
   #hamburger-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    height: 14vh;           /* a bit shorter than desktop */
+    height: 14vh;
   }
 
-  /* Two-column sections become single-column */
   #profile { display: block; height: auto; margin-bottom: 0; }
   .section-container { display: block; height: auto; }
 
-  /* Remove fixed section heights so content flows */
-  section,
-  .section-container { height: fit-content; }
+  section, .section-container { height: fit-content; }
   section { margin: 0 5%; }
 
-  /* Center the profile/about images and size them for tablets */
   .section__pic-container {
     width: 275px;
     height: 275px;
     margin: 0 auto 2rem;
   }
 
-  /* Floating arrow isn’t useful on small screens */
   .icon.arrow { display: none; }
-
-  /* Experience container spacing */
-  #experience,
-  .experience-details-container { margin-top: 2rem; }
-
-  /* Project images fill their cards */
+  #experience, .experience-details-container { margin-top: 2rem; }
   .project-img { width: 100%; height: auto; }
 }
 
-/* ---------- Landscape phones / small tablets (≤992px) ---------- */
+/* ≤992px */
 @media screen and (max-width: 992px) {
   .title { font-size: 2.25rem; }
   .section__text__p2 { font-size: 1.35rem; }
-
-  /* Articles (skill items) scale down a bit */
   article { font-size: 1rem; }
-
-  /* Keep cards comfortable on narrower widths */
   .details-container { padding: 1.25rem; }
 }
 
-/* ---------- Mobiles (≤768px) ---------- */
+/* ≤768px */
 @media screen and (max-width: 768px) {
-  /* Global layout */
   section {
     height: auto;
     margin: 0 1.5rem;
     padding-top: 2rem;
   }
 
-  /* Profile becomes a stacked hero */
   #profile {
     display: flex;
     flex-direction: column;
@@ -82,3 +66,37 @@
     height: auto;
   }
   #profile .section__pic-container { margin: 0 auto; }
+
+  .section-container { display: flex; flex-direction: column; gap: 1.5rem; }
+  .about-containers, .contact-info-upper-container, .btn-container { flex-wrap: wrap; }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo { font-size: 1.5rem; }
+  .title { font-size: 2rem; }
+  .section__text__p2 { font-size: 1.25rem; }
+  .experience-sub-title { font-size: 1.25rem; }
+
+  footer nav { height: fit-content; margin-bottom: 2rem; }
+
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+
+  .text-container { text-align: justify; }
+}
+
+/* ≤480px */
+@media screen and (max-width: 480px) {
+  section { margin: 0 1rem; }
+  .menu-links a { font-size: 1.2rem; padding: 0.75rem 1rem; }
+  .btn { width: 100%; }
+  .contact-info-container { margin: 0.5rem 0; gap: 0.5rem; }
+  footer { height: auto; padding-bottom: 1.5rem; }
+}
