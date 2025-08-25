@@ -1,13 +1,4 @@
-/* Responsive styles
-   Breakpoints:
-   - 1400px: adjust spacing
-   - 1200px: switch to hamburger nav, stack sections
-   - 992px : smaller typography/cards
-   - 768px : mobile layout
-   - 480px : very small screens
-*/
 
-/* ≤1400px */
 @media screen and (max-width: 1400px) {
   #profile { height: 83vh; gap: 4rem; }
   .about-containers { flex-wrap: wrap; gap: 2rem; }
